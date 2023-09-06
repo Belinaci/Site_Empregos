@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de curriculos</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+
+</head>
+
+<body>
+
+    <main>
+        <div class="box">
+            <form action="">
+                <fieldset>
+                    <legend><b>Cadastre-se</b></legend>
+                        <br><br>
+                    <div class="inputBox">
+                        <input type="vaga" name="vaga" id="objetivo" class="inputUser" required>
+                            <label for="select">Digite seu Objetivo </label>
+                        <br><br>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="nome" id="nome" class="inputUser" required>
+                            <label for="nome">Nome Completo</label>
+                        <br><br>
+                    </div>
+                    <div class="inputBox">
+                        <input type="date" name="data" id="data" class="inputUser" required>
+                            <label for="nome">Data de Nascimento</label>
+                        <br><br>
+                    </div>
+                    <div class="inputBox">
+                        <input type="email" name="email" id="email" class="inputUser" required>
+                            <label for="email">Insira seu Email</label>
+                        <br><br>
+                    </div>
+                    <div class="inputBox">
+                        <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                            <label for="telefone">Telefone</label>
+                        <br><br>
+                    </div>
+                    <div class="inputBox">
+                        <input type="tel" name="Celular" id="celular" class="inputUser">
+                            <label for="Celular">Celular</label>
+                        <br><br>
+                    </div>
+                    <div class="inputBox">
+                        <label>Sexo:</label>
+                        <input type="radio" id="sexo_m" name="sexo" value="Masculino" required>
+                        <label for="sexo_m">Masculino</label>
+                        <input type="radio" id="sexo_f" name="sexo" value="Feminino" required>
+                        <label for="sexo_f">Feminino</label><br>    
+                        <br><br>
+                    </div>
+                    <div class="inputBox">
+                        <select name="selectEscolaridade" id="Escolaridade" class="inputUser">
+                            <option value="valor1">Ensino Fundamental Incompleto</option>
+                            <option value="valor2">Ensino Fundamental Completo</option>
+                            <option value="valor3" selected>Ensino Médio Incompleto</option>
+                            <option value="valor4"> Ensino Médio Completo</option>
+                            <option value="valor5">Ensino Superior Incompleto</option>
+                            <option value="valor6">Ensino Superior Completo</option>
+                        </select>
+                            <label for="selectEscolaridade">Escolaridade</label>
+                        <br><br>
+                    </div>
+                    <div class="inputBox">
+                        <input type="url" name="linkedin" id="linkedin" class="inputUser">
+                            <label for="linkedin">LinkedIn</label>
+                            <br><br>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="carta" id="carta" class="inputUser" required>
+                            <label for="carta">Carta de Apresentação</label>
+                        <br><br>
+                    </div>
+                        <input type="submit" name="submit" id="submit" >
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>
