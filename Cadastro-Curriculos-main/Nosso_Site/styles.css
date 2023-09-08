@@ -11,7 +11,7 @@ body{
     background-color: rgba(0, 0, 0, 0.8);
     padding: 15px;
     border-radius: 15px;
-    width: 20%;
+    width: 50%;
 }
 fieldset{
     border: 3px solid rgb(42,69,228);
@@ -25,15 +25,35 @@ legend{
     background-color: rgb(35,60,220);
 }
 .inputBox{
-    position: relative;
+    display: inline-block;
+    margin-right: 10px; /* Adicione margem entre os campos, se necessário */
 }
 .inputUser{
     background: none;
     border: none;
     border-bottom: 1px solid white ;
     outline: none;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 15px;
     width: 100%;
     letter-spacing: 2px;
+}
+.inputUser2{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white ;
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+.inputUser2:hover {
+    background-color: #000000;
+}
+
+.inputUser2:focus {
+    outline: none;
+    border: 1px solid #007bff; /* Cor quando focado */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra quando focado */
 }
