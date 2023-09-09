@@ -46,7 +46,7 @@ legend{
     color: rgb(255, 255, 255);
     font-size: 15px;
     width: 100%;
-    letter-spacing: 2px;
+    letter-spacing: 1,5px;
 }
 .inputUser2:hover {
     background-color: #000000;
