@@ -20,64 +20,57 @@
                         <br><br>
                     <div class="inputBox">
                         <input type="vaga" name="vaga" id="objetivo" class="inputUser" required>
-                            <label for="select">Digite seu Objetivo </label>
+                            <label for="text" class="labelInput">Digite seu Objetivo </label>
                         <br><br>
                     </div>
                     <div class="inputBox">
                         <input type="text" name="nome" id="nome" class="inputUser" required>
-                            <label for="nome">Nome Completo</label>
+                            <label for="nome" class="labelInput">Nome Completo</label>
                         <br><br>
                     </div>
                     <div class="inputBox">
-                        <input type="date" name="data" id="data" class="inputUser" required>
-                            <label for="nome">Data de Nascimento</label>
-                        <br><br>
+                        <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                            <input type="date" name="data_nascimento" id="data_nascimento" required>
+                        <br><br><br>
                     </div>
                     <div class="inputBox">
                         <input type="email" name="email" id="email" class="inputUser" required>
-                            <label for="email">Insira seu Email</label>
+                            <label for="email" class="labelInput">Insira seu Email</label>
                         <br><br>
                     </div>
                     <div class="inputBox">
                         <input type="tel" name="telefone" id="telefone" class="inputUser" required>
-                            <label for="telefone">Telefone</label>
+                            <label for="telefone" class="labelInput">Telefone</label>
                         <br><br>
                     </div>
                     <div class="inputBox">
-                        <input type="tel" name="Celular" id="celular" class="inputUser">
-                            <label for="Celular">Celular</label>
+                        <input type="tel" name="Celular" id="celular" class="inputUser" required>
+                            <label for="Celular" class="labelInput">Celular</label>
                         <br><br>
                     </div>
                     <div class="inputBox">
-                        <select name="select" id="genero" class="inputUser">
-                            <option value="valor1">Masculino</option>
-                            <option value="valor2" selected>Feminino</option>
-                            <option value="valor3">Não Binário</option>
-                            <option value="Valor4">Prefiro não responder</option>
-                        </select>
-                            <label for="select">Gênero</label>
+                        <div class="inputBox">
+                            <label>Sexo:</label>
+                            <input type="radio" id="sexo_m" name="sexo" value="Masculino" required>
+                            <label for="sexo_m">Masculino</label>
+                            <input type="radio" id="sexo_f" name="sexo" value="Feminino" required>
+                            <label for="sexo_f">Feminino</label><br>    
+                            <br><br>
+                        </div>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="Escolaridade" id="escolaridade" class="inputUser" required>
+                            <label for="Escolaridade" class="labelInput">Escolaridade</label>
                         <br><br>
                     </div>
                     <div class="inputBox">
-                        <select name="selectEscolaridade" id="Escolaridade" class="inputUser">
-                            <option value="valor1">Ensino Fundamental Incompleto</option>
-                            <option value="valor2">Ensino Fundamental Completo</option>
-                            <option value="valor3" selected>Ensino Médio Incompleto</option>
-                            <option value="valor4"> Ensino Médio Completo</option>
-                            <option value="valor5">Ensino Superior Incompleto</option>
-                            <option value="valor6">Ensino Superior Completo</option>
-                        </select>
-                            <label for="selectEscolaridade">Escolaridade</label>
-                        <br><br>
-                    </div>
-                    <div class="inputBox">
-                        <input type="url" name="linkedin" id="linkedin" class="inputUser">
-                            <label for="linkedin">LinkedIn</label>
+                        <input type="url" name="linkedin" id="linkedin" class="inputUser" required>
+                            <label for="linkedin" class="labelInput">LinkedIn</label>
                             <br><br>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="carta" id="carta" class="inputUser" required>
-                            <label for="carta">Carta de Apresentação</label>
+                        <label for="carta">Carta de Apresentação</label>
+                            <textarea name="carta" id="carta" class="caixa" placeholder="Escreva sua carta de apresentação aqui..." required></textarea>
                         <br><br>
                     </div>
                         <input type="submit" name="submit" id="submit" >
