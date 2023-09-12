@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de curriculos</title>
+    <title>Cadastro de currículos</title>
     <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
-    
 
     <script>
         function bloquearEspaco(event) {
@@ -121,7 +119,7 @@
                         <br><br>
                     </div>
                     <br><br>
-                    <form id="experienciaForm">
+                    <div id="experienciaContainer">
                         <legend><b>Experiência Profissional</b></legend><br><br>
                         <div class="experiencia">
                             <div class="inputBox">
@@ -151,23 +149,23 @@
                                 <input type="date" name="dataTermino" class="inputUser" required>
                                 <label for="dataTermino">Data de Término</label>
                             </div>
+                            <br><br>
                         </div>
-                        <br><br>
-                        <center><button type="button" id="adicionarExperiencia">Adicionar Experiência</button></center>
-             
+                    </div>
+                    <br><br>
+                    <center><button type="button" id="adicionarExperiencia">Adicionar Experiência</button></center>
+                    <script>
+                        document.getElementById('adicionarExperiencia').addEventListener('click', function () {
+                            const experienciaDiv = document.querySelector('.experiencia');
+                            const clone = experienciaDiv.cloneNode(true);
+                            document.getElementById('experienciaContainer').appendChild(clone);
+                        });
+                    </script>
                     <br><br><br><br>
                     <input type="submit" name="submit" id="submit" >
                 </fieldset>
             </form>
         </div>
     </main>
-<script>
-    document.getElementById('adicionarExperiencia').addEventListener('click', function () {
-        const experienciaDiv = document.querySelector('.experiencia');
-        const clone = experienciaDiv.cloneNode(true);
-        document.getElementById('experienciaForm').appendChild(clone);
-    });v
-</script>
 </body>
-
 </html>
