@@ -39,39 +39,40 @@
                     <legend><b>Cadastre-se</b></legend>
                         <br><br>
                     <div class="inputBox">
-                        <input type="text" name="nome" id="nome" class="inputUser" required onkeydown="bloquearEspaco(event)">
                         <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" class="inputUser" required onkeydown="bloquearEspaco(event)">
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="sobrenome" id="sobrenome" class="inputUser" required onkeydown="bloquearEspaco(event)">
                         <label for="sobrenome">Sobrenome</label>
+                        <input type="text" name="sobrenome" id="sobrenome" class="inputUser" required onkeydown="bloquearEspaco(event)">
                     </div>
                     <br><br>
                     <div class="inputBox">
-                        <input type="date" name="data" id="data" class="inputUser" required>
-                            <label for="nome">Data de Nascimento</label>
-                        <br><br>
+                        <label for="nome">Data de Nascimento</label>
+                        <input type="date" name="data" id="data" required>
+                        <br><br><br>
                     </div>
                     <div class="inputBox">
                         <label>Sexo:</label>
                         <input type="radio" id="sexo_m" name="sexo" value="Masculino" required>
                         <label for="sexo_m">Masculino</label>
                         <input type="radio" id="sexo_f" name="sexo" value="Feminino" required>
-                        <label for="sexo_f">Feminino</label><br>    
+                        <label for="sexo_f">Feminino</label><br>     
                         <br><br>
                     </div>
                     <div class="inputBox">
+                        <label for="email">Insira seu Email</label>
                         <input type="email" name="email" id="email" class="inputUser" required onkeydown="bloquearEspaco(event)">
-                            <label for="email">Insira seu Email</label>
                         <br><br>
                     </div>
                     <div class="inputBox">
-                            <input type="tel" name="Celular" id="celular" class="inputUser" oninput="formatarTelefone(this)">
-                            <label for="Celular">Celular</label>
+                        <label for="Celular">Celular</label>
+                        <input type="tel" name="Celular" id="celular" class="inputUser" oninput="formatarTelefone(this)">
                         <br><br>
                     </div>
                     <br>
                     <div class="inputBox">
+                        <label for="selectEscolaridade">Escolaridade</label>
                         <select name="selectEscolaridade" id="Escolaridade" class="inputUser2">
                             <option value="valor1">Ensino Fundamental Incompleto</option>
                             <option value="valor2">Ensino Fundamental Completo</option>
@@ -81,22 +82,22 @@
                             <option value="valor6">Ensino Superior Cursando</option>
                             <option value="valor6">Ensino Superior Completo</option>
                         </select>
-                            <label for="selectEscolaridade">Escolaridade</label>
                         <br><br>
                     </div>
                     <br>
                     <div class="">
+                        <label for="linkedin">LinkedIn</label>
                         <input type="url" name="linkedin" id="linkedin" class="inputUser">
-                            <label for="linkedin">LinkedIn</label>
-                            <br><br>
+                    <br><br>
                     </div>
                     <br>
                     <div>
-                        <textarea name="carta" id="carta" class="inputUser3" placeholder="Escreva sua carta de apresentação aqui..." required></textarea>
-                        <label for="carta">Carta de Apresentação</label>
+                    <label for="carta">Carta de Apresentação</label>
+                    <textarea name="carta" id="carta" class="inputUser3" placeholder="Escreva sua carta de apresentação aqui..." required></textarea>
                     </div>
                     <br><br>
                     <div class="inputBox">
+                        <label for="selectEscolaridade">Área Pretendida</label>
                         <select name="selectEscolaridade" id="Escolaridade" class="inputUser2">
                             <option value="valor1">Agropecuária</option>
                             <option value="valor2">Indústria</option>
@@ -109,13 +110,12 @@
                             <option value="valor6">Serviços Financeiros</option>
                             <option value="valor6">Turismo e Hospitalidade:</option>   
                         </select>
-                            <label for="selectEscolaridade">Área Pretendida</label>
                         <br><br>
                     </div>
                     <br>
                     <div class="i">
+                        <label for="select">Digite a Área que Deseja Atuar </label>
                         <input type="vaga" name="vaga" id="objetivo" class="inputUser" required>
-                            <label for="select">Digite a Área que Deseja Atuar </label>
                         <br><br>
                     </div>
                     <br><br>
@@ -123,17 +123,17 @@
                         <div class="experiencia">
                             <legend><b>Experiência Profissional</b></legend><br><br>
                             <div class="inputBox">
-                                <input type="text" name="titulo" class="inputUser" required>
                                 <label for="titulo">Título</label>
+                                <input type="text" name="titulo" class="inputUser" required>
                             </div>
                             <div class="inputBox">
-                                <input type="text" name="nomeEmpresa" class="inputUser" required>
                                 <label for="nomeEmpresa">Empresa</label>
+                                <input type="text" name="nomeEmpresa" class="inputUser" required>
                             </div>
                             <br><br>
                             <div>
-                                <input type="text" name="local" class="inputUser" required>
                                 <label for="local">Local</label>
+                                <input type="text" name="local" class="inputUser" required>
                             </div>
                             <br>
                             <div>
@@ -142,18 +142,18 @@
                             </div>
                             <br><br>
                             <div class="inputBox">
-                                <input type="date" name="dataInicio" class="inputUser" required>
                                 <label for="dataInicio">Data de Início</label>
+                                <input type="date" name="dataInicio" id="data" required>
                             </div>
                             <div class="inputBox">
-                                <input type="date" name="dataTermino" class="inputUser" required>
                                 <label for="dataTermino">Data de Término</label>
+                                <input type="date" name="dataTermino" id="data" required>
                             </div>
                             <br><br>
                         </div>
                     </div>
                     <br><br>
-                    <center><button type="button" id="adicionarExperiencia">Adicionar Experiência</button></center>
+                    <button type="button" id="adicionarExperiencia">Adicionar Experiência</button>
                     <script>
                         document.getElementById('adicionarExperiencia').addEventListener('click', function () {
                             const experienciaDiv = document.querySelector('.experiencia');
