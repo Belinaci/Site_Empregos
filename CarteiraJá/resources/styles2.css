@@ -1,12 +1,14 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto+Slab:wght@600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+    color: white;
     background-image: url(../assets/low-poly-grid-haikei.svg);
-    width: 100vw;
-    height: 170vh;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin: 0;
 }
 .box {
     color: white;
@@ -34,19 +36,6 @@ legend{
 .inputBox{
     display: inline-block;
     margin-right: 30px; /* Adicione margem entre os campos, se necessário */
-}
-#container {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    width: 360px;
-    height: 120px;
-    margin: auto;
-    box-shadow: 0px 0px 10px black;
-    padding: 20px;
-    box-sizing: border-box;
 }
 .inputUser{
     background: none;
@@ -92,12 +81,6 @@ legend{
     outline: none;
     border: 1px solid #007bff; /* Cor quando focado */
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra quando focado */
-}
-.panel {
-    background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo com transparência */
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 10px; /* Borda arredondada */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 .inputUser3 {
     background: none;
