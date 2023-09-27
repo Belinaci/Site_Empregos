@@ -126,3 +126,8 @@ legend{
 #submit:hover{
     background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
 }
+
+.form-group {
+    display: inline-block;
+    margin-right: 10px; /* Isso adicionará um espaço entre os campos */
+}
