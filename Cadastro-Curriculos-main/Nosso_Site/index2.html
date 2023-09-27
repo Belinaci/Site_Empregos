@@ -74,22 +74,22 @@
                     </div>
                     <br>
                     <div class="inputBox">
-                        <label for="selectEscolaridade">Escolaridade</label>
-                        <select name="selectEscolaridade" id="Escolaridade" class="inputUser2">
+                        <label for="selectEscolaridade">Escolaridade</label><br><br>
+                        <select name="selectEscolaridade" id="selectEscolaridade" class="inputUser2" required>
+                            <option value="" disabled selected hidden>Selecione sua Escolaridade</option>
                             <option value="valor1">Ensino Fundamental Incompleto</option>
                             <option value="valor2">Ensino Fundamental Completo</option>
                             <option value="valor3">Ensino Médio Incompleto</option>
-                            <option value="valor4" selected>Ensino Médio Completo</option>
+                            <option value="valor4">Ensino Médio Completo</option>
                             <option value="valor5">Ensino Superior Incompleto</option>
                             <option value="valor6">Ensino Superior Cursando</option>
                             <option value="valor6">Ensino Superior Completo</option>
                         </select>
-                        <br><br>
                     </div>
-                    <br>
+                    <br><br><br>
                     <div class="">
                         <label for="linkedin">LinkedIn</label>
-                        <input type="url" name="linkedin" id="caixa" class="inputUser">
+                        <input type="url" name="linkedin" id="caixa" class="inputUser" placeholder="Adicione seu perfil do Linkedin">
                             <br><br>
                     </div>
                     <br>
@@ -99,31 +99,31 @@
                     </div>
                     <br><br>
                     <div class="inputBox">
-                        <label for="selectEscolaridade">Área Pretendida</label>
-                        <select name="selectEscolaridade" id="Escolaridade" class="inputUser2">
+                        <label for="selectAreapretendida">Área Pretendida</label><br><br>
+                        <select name="selectAreapretendida" id="selectAreapretendida" class="inputUser2" required>
+                            <option value="" disabled selected hidden>Selecione uma Área</option>
                             <option value="valor1">Agropecuária</option>
                             <option value="valor2">Indústria</option>
                             <option value="valor3">Serviços</option>
                             <option value="valor4">Construção Civil</option>
                             <option value="valor5">Comércio varejista</option>
                             <option value="valor6">Educação</option>
-                            <option value="valor6">Saúde</option>
-                            <option value="valor6">Tecnologia da Informação (TI)</option>
-                            <option value="valor6">Serviços Financeiros</option>
-                            <option value="valor6">Turismo e Hospitalidade:</option>   
+                            <option value="valor7">Saúde</option>
+                            <option value="valor8">Tecnologia da Informação (TI)</option>
+                            <option value="valor9">Serviços Financeiros</option>
+                            <option value="valor10">Turismo e Hospitalidade</option>
                         </select>
-                        <br><br>
                     </div>
-                    <br>
+                    <br><br><br>
                     <div class="i">
-                        <label for="select">Digite a Área que Deseja Atuar </label>
-                        <input type="vaga" name="vaga" id="caixa" class="inputUser" required>
+                        <label for="select">Área que Deseja</label>
+                        <input type="vaga" name="vaga" id="caixa" class="inputUser" placeholder="Escreva a Área que Deseja Atuar..." required>
                         <br><br>
                     </div>
                     <br><br>
                     <legend><b>Experiência Profissional</b></legend><br><br>
                     <div class="inputBox">
-                        <label for="titulo">Título</label>
+                        <label for="titulo">Cargo</label>
                         <input type="text" name="titulo" id="caixa" class="inputUser" required>
                     </div>
                     <div class="inputBox">
@@ -136,19 +136,19 @@
                         <input type="text" name="local" id="caixa" class="inputUser" required>
                     </div>
                     <br>
-                    <div>
-                        <label for="experiencia">Experiência Profissional:</label>
-                        <textarea name="experiencia" id="experiencia" class="inputUser3" placeholder="Descreva sua experiência profissional aqui..."></textarea>
-                    </div>
-                    <br><br>
                     <div class="inputBox">
-                        <label for="data_inicio"><b>Data de inicio:</b></label>
-                        <input type="date" name="caixa" id="data" required>
-                    </div>
-                    <div class="inputBox">
-                        <label for="data_termino"><b>Data de término:</b></label>
-                        <input type="date" name="data_nascimento" id="data" required>
-                    </div>
+                        <div class="inputBox">
+                            <label for="TemponaArea">Tempo na Area</label>
+                            <select name="selectTemponaArea" id="TemponaArea" class="inputUser2">
+                                <option value="" disabled selected hidden>Selecione o Tempo</option>
+                                <option value="valor0">Não tenho Experiência</option>
+                                <option value="valor1">6 meses á 1 ano</option>
+                                <option value="valor2">1 ano á 3 anos</option>
+                                <option value="valor3">3 anos á 5 anos</option>
+                                <option value="valor4">Mais de 5 anos</option>
+                            </select>
+                            <br><br>
+                        </div>
                     <br><br><br><br>
                     <input type="submit" name="submit" id="submit" >
                 </fieldset>
