@@ -175,6 +175,8 @@ div#form-home button svg{
     margin: 10px;
 }
 #mais-vagas{
+    display: flex;
+    flex-wrap: wrap;
     margin: 40px;
     display: flex;
     justify-content: center;
