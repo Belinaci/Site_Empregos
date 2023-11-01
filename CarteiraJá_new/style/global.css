@@ -167,6 +167,7 @@ footer{
 }
 
 .botao-estilo{
+    margin-bottom: 30px;
     display: inline-block;
     margin-right: 30px;
     background: var(--verdeFundo);
