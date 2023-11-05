@@ -1,256 +1,638 @@
-main{
-    margin-top: 2px;
-    margin-bottom: 20px;
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/global.css">
+    <link rel="stylesheet" href="style/vagas.css">
+    <link rel="shortcut icon" href="svg/wallet-money-2-svgrepo-com.svg" type="image/x-icon">
+    <title>Procurar Emprego - CarteiraJá</title>
 
-}
-/* Header */
-#total-vagas{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 50px;
-    background: #F1F1F1;
-    width: 100%;
+</head>
+<body>
+    <header>
+        <div class="menu-container">
+            <div class="logotipo">
+                <h1 class="logo"><a href="index.html">CarteiraJá</a></h1>
+            </div>
+            
+            <div class="menu-toggle">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
 
-}
-#total-vagas h2{
-    font-size: 15pt;
-    color: var(--cinzaFundo);
-    font-weight: 600;
-}
-#total-vagas h2 span{
-    color: var(--verdeFundo);
-    font-weight: bold;
-    font-size: 16pt;
-}
-/* Container Vagas e Filtro */
-#container-vagas{
-    
-    padding-left: 70px;
-    display: flex;
-}
-/* Filtro */
-#filtro{
-    width: 25%;
-
-}
-#filtro #campo-busca input{
-    width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
-    outline: none;
-    text-indent: 10px;
-    font-size: 14pt;
-}
-.linhaFiltro{
-    width: 100%;
-    height: 1px;
-    background: rgb(204, 204, 204);
-    margin: 15px 0;
-}
-#vagas{
-    width: 75%;
-    
-}
-#texto-filtro h2{
-    color: var(--verdeFundo);
-}
-.filtros h3{
-    font-size: 18pt;
-    color: var(--cinzaFundo);
-    margin-bottom: 5px;
-}
-#filtro-checkbox input[type="checkbox"]{
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-}
-#filtro-checkbox div ul li {
-    display: flex;
-    align-items: center;
-    font-size: 14pt;
-}
-#botao-filtro{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-#botao-filtro button{
-    padding: 15px;
-}
-#botao-filtro a {
-    background: var(--cinzaFundo);
-    color: white;
-}
-#botao-filtro a:hover{
-    color:  var(--cinzaFundo);
-    background: rgb(206, 205, 205);
-}
-/* Vagas */
-.linhaVaga{
-    width: 90%;
-    height: 1px;
-    background: rgb(204, 204, 204);
-    margin: 15px 0;
-}
-#vagas{
-    margin-left: 20px;
-}
-#vagas ul{
-    margin-top: -12px;
-    margin-bottom: 10px;;
-}
-#vagas #proximaPag{
-    margin: 20px;
-    display: flex;
-    justify-content: center;
+            <nav>
+                <a href="index.html" >Início</a>
+                <a href="vagas.html" class="selecionado">Procurar Emprego</a>
+                <a href="sobre-nos.html">Sobre nós</a>
+            </nav>
+        </div>
         
-}
-#vagas #proximaPag a{
-    font-family: Calibri;
-    background: rgb(206, 205, 205);
-    color: var(--cinzaFundo);
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-style: italic;
-    font-weight: 600;
-}
-#vagas #proximaPag a:hover{
-    background: var(--cinzaFundo);
-    color: rgb(206, 205, 205);
-}
-#vagas .vaga{
-    display: flex;
-}
-#vagas .vaga .texto-vagas{
-    margin: 10px;
-}
-#vagas ul li{
-    margin-bottom: 20px;
-}
-#vagas .vaga .texto-vagas h3{
-    line-height: 0;
-    margin: 4px 0 0 0 ;
-    font-weight: 600;
-}
-#vagas .vaga .texto-vagas .vaga-info{
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-#vagas .vaga .texto-vagas .vaga-info p {
-    margin-right: 20px;
-    display: flex;
-    align-items: center;
-}
-.vaga-requisitos{
-    margin-top: 10px;
-}
-#vagas .vaga .texto-vagas .vaga-info svg{
-   margin-right: 2px;
-    color: var(--verdeFundo);
-}
-span{
-    font-weight: 600;
-}
+    </header>
+ 
+    <main>
+        <div id="total-vagas">
+            <h2>Foram encontradas <span id="contador-vagas"></span> vagas:</h2>
 
-/*
-.paginacao-container {
-    text-align: center;
-    display: flex;
-    font-family: 'Roboto', 'slab';
-}
+            
+        </div>
 
-.paginacao-container button,
-.paginacao-container span {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    font-size: 18px; 
-    margin: auto 10px;
-}
+        <div id="container-vagas">
+            <div id="filtro">
+ 
 
 
-.paginacao-container .pagina-atual {
-    background-color: var(--verdeFundo); 
-    color: white; 
-    border-radius: 150%; 
-    padding: 10px 15px; 
-}
+                <div class="linhaFiltro"></div>
 
-*/
+                <div id="texto-filtro">
+                    <h2>Filtrar busca</h2>
+                    <p>Utilize os filtros abaixo para refinar sua busca</p>
+                </div>
+
+                <div class="linhaFiltro"></div>
+
+                <div id="filtro-checkbox" class="filtros">
+                    
+                    <h2>Área Desejada</h2>
+
+                    <div id="areadesejada">
+                        <ul>
+                            <li><input type="checkbox"  id="admin" >Administrativo</li>
+                            <li><input type="checkbox"  id="enge">Engenharia</li>
+                            <li><input type="checkbox"  id="prod">Produção</li>
+                            <li><input type="checkbox"  id="serv">Serviços Gerais</li>
+                            <li><input type="checkbox"  id="ti">Tecnologia da Informação</li>
+                        </ul>
+                    </div>
+                    
+                    
+                    <div class="linhaFiltro"></div>
+
+                    <div id="horario">
+                        <h2>Disponibilidade de Horário</h2>
+                        <ul>
+                            <li><input type="checkbox" id="integral"> Integral</li>
+                            <li><input type="checkbox" id="manha"> Manhã</li>
+                            <li><input type="checkbox" id="tarde"> Tarde</li>
+                            <li><input type="checkbox" id="noite"> Noite</li>
+                        </ul>
+                    </div>
+
+                    <div class="linhaFiltro"></div>
+
+                    <div id="Sites">
+                        <h2>Sites</h2>
+                        <ul>
+                            <li><input type="checkbox" id="burh">Burh</li>
+                            <li><input type="checkbox" id="catho">Catho</li>
+                            <li><input type="checkbox" id="gupy">Gupy</li>
+                        </ul>
+                    </div>
+
+                    
+
+                    
+                </div>
+            </div>
 
 
+            <div id="vagas">  
+                <ul id="vagasContainer">
+                    
+                    <li class="item admin integral burh">
+                        <div class="linhaVaga"></div>
+                        <a href="https://burh.com.br/vagas/4269844602" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
 
-@media (max-width: 1170px){
-    #filtro{
-        width: 35%;
-    }
-    #vagas{
-        width: 75%;
-        padding-right: 20px;
-    }
-    .vaga img{
-        width: 60px; height: 60px;
-    }
-}
-@media (max-width: 880px){
-    #container-vagas{
-        flex-direction: column;
-        padding-left: 20px;
-    }
-    #filtro{
-        width: 80%;
-        margin: 0 auto;
-    }
-    #vagas{
-        width: 80%;
-        padding-right: 0;
-        margin: 20px auto;
-    }
-    .botao-estilo{
-        text-align: center;
-    }
-    #vagas .vaga .texto-vagas h3{
-        line-height: normal;
-        position: relative;
-        top: -15px;
-    }
-    #vagas .vaga .texto-vagas .vaga-info {
-        margin-top: 0;
-    }
-}
-@media (max-width: 620px){
-    #total-vagas{
-        flex-wrap:nowrap;
-    }
-    #botaoAnuncio{
-        display: flex;
-        justify-content: flex-end;
-        width:100%;
-        margin-top: 5px;
-    }
-    #total-vagas a {
-        margin-top: 5px;
-    }
-    #container-vagas{
-        padding-left:0;
-    }
-    #filtro,
-    #vagas{
-        width: 100%;
-        padding: 20px;
-    }
-}
-@media (max-width: 470px){
-    #total-vagas{
-        flex-wrap: wrap;
-    }
-    #botaoAnuncio{
-        width:auto;
-    }
-}
+                        <div class="texto-vagas">
+                            
+                            <h3> Auxiliar Administrativo</h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> Aprendiz</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> Burh</p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> Integral</p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos: Jovens de 18-22 Anos | Cursando Técnico ou Faculdade.</span> </p>
+                            <p class="vaga-descricao"><span>Descrição: Carga Horaria: 06 horas diárias, salário e benefícios.</span> </p>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="item prod integral catho">
+                        <div class="linhaVaga"></div>
+                        <a href="https://www.catho.com.br/vagas/auxiliar-de-producao-i/24705033/?origem_apply=busca-de-vagas&entrada_apply=direto" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
+
+                        <div class="texto-vagas">
+                            
+                            <h3> Auxiliar de Produção I</h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> CLT</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> Catho</p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> Integral</p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos: Formação mini a 1 grau completo. Infelizmente não poderá ser portador de deficiência fisica motora.</span> </p>
+                            <p class="vaga-descricao"><span>Descrição: O Auxiliar de produção é uma função flexível e trabalhará em uma celula com várias atividades. O Trabalho é manual e repetitivo.</span> </p>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="item serv integral catho">
+                        <div class="linhaVaga"></div>
+                        <a href="https://www.catho.com.br/vagas/auxiliar-de-limpeza-sharp38718/24845453/?origem_apply=busca-de-vagas&entrada_apply=direto" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
+
+                        <div class="texto-vagas">
+                            
+                            <h3> AUXILIAR DE LIMPEZA</h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> CLT</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> Catho</p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> Integral</p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos: DESEJÁVEL: EXPERIÊNCIA NA FUNÇÃO; PROATIVO; DISPONIBILIDADE DE HORÁRIO; ALFABETIZADO.</span> </p>
+                            <p class="vaga-descricao"><span>Descrição: IRÁ ATUAR COM LIMPEZA, HIGIENIZAÇÃO E CONSERVAÇÃO DO AMBIENTE.</span> </p>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="item admin integral gupy">
+                        <div class="linhaVaga"></div>
+                        <a href="https://infotecbrasil.gupy.io/job/eyJqb2JJZCI6NTc0MDc2OCwic291cmNlIjoiZ3VweV9wb3J0YWwifQ==?jobBoardSource=share_link" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
+
+                        <div class="texto-vagas">
+                            
+                            <h3> Assistente Administrativo</h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> CLT</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> Gupy</p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> Integral</p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos: Ensino Médio Completo, diferencial está cursando Ensino Superior. | Vivência em rotinas administrativas no setor de energia elétrica e/ou telecomunicações. | Pacote Office básico</span> </p>
+                            <p class="vaga-descricao"><span>Descrição: Dar apoio administrativo às operações de corte e de religação das equipes em campo e supervisor contratado da CPFL.</span> </p>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="item serv integral burh">
+                        <div class="linhaVaga"></div>
+                        <a href="https://burh.com.br/vagas/4266119695" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
+
+                        <div class="texto-vagas">
+                            
+                            <h3> Vendedor</h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> CLT</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> Burh</p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> Integral</p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos: Experiência como Balconista/Vendedor no ramo de tintas | Experiência com Sistema Autcom | CNH B | Conhecimento com Pacote Office.</span> </p>
+                            <p class="vaga-descricao"><span>Descrição: Realizar vendas, atendimento ao cliente, prospecção de novos clientes, operar caixa, auxílio na reposição de mercadorias.</span> </p>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="item serv integral burh">
+                        <div class="linhaVaga"></div>
+                        <a href="#" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
+
+                        <div class="texto-vagas">
+                            
+                            <h3> Serviços Gerais</h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> CLT</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> Burh</p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> Integral</p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos: Experiência na função</span> </p>
+                            <p class="vaga-descricao"><span>Descrição:Limpeza e organização em geral, reposição de papeis guardanapos, copos, café sempre quando necessário, limpar áreas externas;</span> </p>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="item ">
+                        <div class="linhaVaga"></div>
+                        <a href="#" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
+
+                        <div class="texto-vagas">
+                            
+                            <h3> </h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> CLT</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> </p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> </p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos:</span> </p>
+                            <p class="vaga-descricao"><span>Descrição:</span> </p>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="item ">
+                        <div class="linhaVaga"></div>
+                        <a href="#" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
+
+                        <div class="texto-vagas">
+                            
+                            <h3> </h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> CLT</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> </p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> </p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos:</span> </p>
+                            <p class="vaga-descricao"><span>Descrição:</span> </p>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="item ">
+                        <div class="linhaVaga"></div>
+                        <a href="#" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
+
+                        <div class="texto-vagas">
+                            
+                            <h3> </h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> CLT</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> </p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> </p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos:</span> </p>
+                            <p class="vaga-descricao"><span>Descrição:</span> </p>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="item ">
+                        <div class="linhaVaga"></div>
+                        <a href="#" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
+
+                        <div class="texto-vagas">
+                            
+                            <h3> </h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> CLT</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> </p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> </p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos:</span> </p>
+                            <p class="vaga-descricao"><span>Descrição:</span> </p>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="item ">
+                        <div class="linhaVaga"></div>
+                        <a href="#" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
+
+                        <div class="texto-vagas">
+                            
+                            <h3> </h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> CLT</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> </p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> </p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos:</span> </p>
+                            <p class="vaga-descricao"><span>Descrição:</span> </p>
+                        </div>
+                    </a>
+                    </li>
+
+                    <li class="item ">
+                        <div class="linhaVaga"></div>
+                        <a href="#" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
+
+                        <div class="texto-vagas">
+                            
+                            <h3> </h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> CLT</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> </p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> </p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos:</span> </p>
+                            <p class="vaga-descricao"><span>Descrição:</span> </p>
+                        </div>
+                    </a>
+                    </li>
+                       
+                    <!-- MODELO
+                    <li class="item ">
+                        <div class="linhaVaga"></div>
+                        <a href="#" class="vaga">
+                        
+                         
+                        <img src="svg/briefcase-svgrepo-com.svg" alt="Icone vaga" width="70" height="70">
+
+                        <div class="texto-vagas">
+                            
+                            <h3> </h3>
+                            <div class="vaga-info"> 
+
+                                <p class="info-emprego">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
+                                    </svg> CLT</p>
+
+
+                                    
+
+                                <p class="info-local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                </svg> </p>
+                                
+                                <p class="info-horario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg> </p>
+                                
+                                </div>
+                            <p class="vaga-requisitos"><span>Requisitos:</span> </p>
+                            <p class="vaga-descricao"><span>Descrição:</span> </p>
+                        </div>
+                    </a>
+                    </li>
+                    -->   
+
+                </ul><!--End VAGAS-->
+                       
+                <!--<div class="paginacao-container">
+                    <button id="paginaAnterior">&lt;</button>
+                    <div id="paginaNumeros"></div>
+                    <button id="paginaSeguinte">&gt;</button>
+                </div>
+                -->
+
+                    
+            </div> 
+
+            <div class="linha"></div>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <p>Possui alguma dúvida ou problema? Nos contate:</p>
+        <p>carteiraja.ofc@gmail.com</p>
+        <br>
+        <p>Site criado para fins sociais</p>
+        <p>&copy;CarteiraJá | 2023</p>
+    </footer>
+    <script type="text/javascript" src="script/script.js"></script>
+</body>
+</html>
