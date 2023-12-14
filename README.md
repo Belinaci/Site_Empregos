@@ -7,4 +7,10 @@ A abordagem será participativa, envolvendo a colaboração de órgãos governam
 </p>
 
 <h2>Entre no Site</h2>
-<p></p>
+<p>
+  Access the site clicking [here](https://Belinaci.github.io/Site_Empregos/)<br>You can also clone the repository with git or download the code as RAR.
+
+```bash
+$ git clone https://github.com/Belinaci/TurismoRegional.git
+```
+</p>
